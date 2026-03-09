@@ -1,6 +1,8 @@
-package br.com.duduzyn.java10x_course;
+package br.com.duduzyn.java10x_course.Pessoas.Controller;
+import br.com.duduzyn.java10x_course.Pessoas.Trabalhos.TrabalhosModel;
 import jakarta.persistence.*;
-import org.hibernate.annotations.processing.SQL;
+
+import java.util.List;
 
 @Entity
 @Table(name = "tb_cadastro")
@@ -8,11 +10,15 @@ public class PessoaModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
     private int idade;
     private String nome;
     private String email;
-
+    //Muitos para um, ou seja, muitas pessoas podem ajudar no trabalho,
+    //porem uma pessoa pode fazer so um trabalho!
+    @ManyToOne()
+    @JoinColumn(name = "trabalhos_id") //Foreing Key ou Chave Estrangeira
+    private TrabalhosModel trabalho;
 
     public PessoaModel() {
     }

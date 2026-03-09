@@ -1,13 +1,13 @@
-package br.com.duduzyn.java10x_course;
+package br.com.duduzyn.java10x_course.Pessoas;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Java10xCourseApplication {
+public class CadastroDePessoasApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Java10xCourseApplication.class, args);
+		SpringApplication.run(CadastroDePessoasApplication.class, args);
 	}
 
 }

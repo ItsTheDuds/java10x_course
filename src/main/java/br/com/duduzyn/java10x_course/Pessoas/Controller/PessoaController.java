@@ -1,4 +1,4 @@
-package br.com.duduzyn.java10x_course;
+package br.com.duduzyn.java10x_course.Pessoas.Controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
