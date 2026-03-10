@@ -1,12 +1,16 @@
 package br.com.duduzyn.java10x_course.Pessoas.Trabalhos;
-
 import br.com.duduzyn.java10x_course.Pessoas.Controller.PessoaModel;
 import jakarta.persistence.*;
-
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import java.util.List;
 
 @Entity
 @Table(name = "tb_trabalhos")
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class TrabalhosModel {
 
     @Id
@@ -18,27 +22,8 @@ public class TrabalhosModel {
     @OneToMany(mappedBy = "trabalho")
     private List<PessoaModel> pessoas;
 
-    public TrabalhosModel() {
-    }
-
     public TrabalhosModel(String tipoDeTrabalho, String dificuldade) {
         this.tipoDeTrabalho = tipoDeTrabalho;
-        this.dificuldade = dificuldade;
-    }
-
-    public String getTipoDeTrabalho() {
-        return tipoDeTrabalho;
-    }
-
-    public String getDificuldade() {
-        return dificuldade;
-    }
-
-    public void setTipoDeTrabalho(String tipoDeTrabalho) {
-        this.tipoDeTrabalho = tipoDeTrabalho;
-    }
-
-    public void setDificuldade(String dificuldade) {
         this.dificuldade = dificuldade;
     }
 }

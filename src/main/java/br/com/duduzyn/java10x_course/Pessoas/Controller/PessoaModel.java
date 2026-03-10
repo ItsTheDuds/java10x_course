@@ -1,11 +1,15 @@
 package br.com.duduzyn.java10x_course.Pessoas.Controller;
 import br.com.duduzyn.java10x_course.Pessoas.Trabalhos.TrabalhosModel;
 import jakarta.persistence.*;
-
-import java.util.List;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "tb_cadastro")
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class PessoaModel {
 
     @Id
@@ -20,36 +24,4 @@ public class PessoaModel {
     @JoinColumn(name = "trabalhos_id") //Foreing Key ou Chave Estrangeira
     private TrabalhosModel trabalho;
 
-    public PessoaModel() {
-    }
-
-    public PessoaModel(int idade, String nome, String email) {
-        this.idade = idade;
-        this.nome = nome;
-        this.email = email;
-    }
-
-    public int getIdade() {
-        return idade;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setIdade(int idade) {
-        this.idade = idade;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getEmail() {
-        return email;
-    }
 }
