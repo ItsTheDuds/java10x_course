@@ -14,13 +14,23 @@ public class PessoaModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID")
     private Long id;
+
+    @Column(name = "idade")
     private int idade;
+
+    @Column(name = "nome")
     private String nome;
-    @Column(unique = true)
+
+
+    @Column(unique = true, name = "email")
     private String email;
-    @Column(unique = true)
+
+    @Column(unique = true, name = "cpf")
     private String cpf;
+
+
     //Muitos para um, ou seja, muitas pessoas podem ajudar no trabalho,
     //porem uma pessoa pode fazer so um trabalho!
     @ManyToOne()
