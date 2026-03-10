@@ -17,7 +17,10 @@ public class PessoaModel {
     private Long id;
     private int idade;
     private String nome;
+    @Column(unique = true)
     private String email;
+    @Column(unique = true)
+    private String cpf;
     //Muitos para um, ou seja, muitas pessoas podem ajudar no trabalho,
     //porem uma pessoa pode fazer so um trabalho!
     @ManyToOne()
